@@ -10,7 +10,7 @@
 
 ## 间隙
 通过分析最近的数据，本文展示了介于追求更高准确度而设计更大DNNs的数据科学家和设计试图适应上述DNNs架构的硬件架构师之间的间隙。同时，伴随着检测误差的指数式下降，模型层数、参数量和计算量的指数上升。<br>
-> 性能间隙。
+1.性能间隙。
 - 模型操作数伴随着检测误差的指数下降而指数上升。即使从2014年提出并行结构化优化，能显著降低操作数的GooglNet之后，模型操作数仍以指数上升。<br>
  （补充学习：并行结构化优化[[18](https://arxiv.org/pdf/1802.03646.pdf)\  [19](https://en.wikipedia.org/wiki/List_of_Nvidia_graphics_processing_units)]）<br>
 - GPUs、FPGAs、ASICs是适应边缘计算模型的常用硬件平台。![图3](https://github.com/BintaoWang/Literature-notes/blob/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-03-25%20203150.jpg)decpits 模型的性能和算力平台的性能密度。GPU:2011-2014年出于架构和工艺没有进展，高端GPU PD保持平稳。2015年，相关工艺从28nm集成到20nm，PD提高到两倍左右。2017年，相关工艺集成到12nm时，PD出现了略微下降，这是由于大型的内存和高带宽IO需要更大的面积，之后基本饱和。为DNNs而设计的ASIC因顾及不同指标而不同，如性能、功率（Myriad 2, Eyeriss and EIE）、或者速度。但是由于高度定制化，ASICs的性能高于GPUs和FPGAs。总之2011-2013PD指数式上升，之后保持平稳，且都在摩尔定律的预言之下。预计当工艺达到5nm时，PD将不会上升。<br>
