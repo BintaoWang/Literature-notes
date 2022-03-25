@@ -16,7 +16,13 @@ __1. 性能间隙__
 > - GPUs、FPGAs、ASICs是适应边缘计算模型的常用硬件平台。![图3](https://github.com/BintaoWang/Literature-notes/blob/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-03-25%20203150.jpg)decpits 模型的性能和算力平台的性能密度。GPU:2011-2014年出于架构和工艺没有进展，高端GPU PD保持平稳。2015年，相关工艺从28nm集成到20nm，PD提高到两倍左右。2017年，相关工艺集成到12nm时，PD出现了略微下降，这是由于大型的内存和高带宽IO需要更大的面积，之后基本饱和。为DNNs而设计的ASIC因顾及不同指标而不同，如性能、功率（Myriad 2, Eyeriss and EIE）、或者速度。但是由于高度定制化，ASICs的性能高于GPUs和FPGAs。总之2011-2013PD指数式上升，之后保持平稳，且都在摩尔定律的预言之下。预计当工艺达到5nm时，PD将不会上升[参考文献](https://www.nature.com/articles/nnano.2015.318.pdf)。<br>
 __2. 能量效率间隙__
 > - 模型的参数量随着检测误差的下降而指数式上升，无论有无并行结构化优化。<br>
-> - <br>
+> - __硬件方面，本文更多是关注SRAM和DRAM，因为SRAM比DRAM和ALU的能量效率高2-3个数量级、而DRAM比SRAM成本低很多。__ 从![图四](https://github.com/BintaoWang/Literature-notes/blob/master/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-03-25%20212223.jpg)可以看出，2012-1015，DRAM的能量效率随着CMOS工艺的扩张而提升，2015年之后，受限于摩尔定律，其能量效率和内存密度没有进一步提升。同时图中显示，内存的能量效率不可能随着模型尺寸的增长而同步增长，这也导致处理相同任务能量需求的上升。<br>
+
+## 弥补间隙
+
+__1. 架构创新__
+> - __[脉动阵列架构](https://hal.inria.fr/file/index/docid/76484/filename/RR-0077.pdf)__ 
+
 
 
 
